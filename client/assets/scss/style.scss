@@ -1,0 +1,64 @@
+@import './grid.scss';
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 42px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-main-lighten;
+}
+
+.container {
+    @include container;
+}
+
+.row {
+    @include row();
+}
+
+.overlay {
+    overflow: hidden;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+.page__content {
+    flex-grow: 1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    background-color: $color-main;
+
+    &_xxl {
+        width: 100%;
+
+        @media (min-width: $screen-md) {
+            width: inherit;
+        }
+    }
+}
