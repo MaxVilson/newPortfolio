@@ -18,7 +18,7 @@
 export default {
   async asyncData({ $axios }) {
     try {
-      const responsePortfolio = await $axios.$get('http://localhost:7777/api/portfolio/')
+      const responsePortfolio = await $axios.$get()
 
       return {
         portfolio: responsePortfolio.portfolio,
