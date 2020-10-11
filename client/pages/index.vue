@@ -87,7 +87,7 @@
 
     img {
       max-width: 100%;
-      background-size: cover;
+      object-fit: cover;
     }
   }
 

@@ -29,14 +29,12 @@
     width: 30px;
     height: 20px;
     backface-visibility: hidden;
-    transition: 0.25s;
 
     &_active {
       .burger__top {
         backface-visibility: hidden;
         top: 8px;
         transform: rotate(50deg);
-        transition: 0.25s 0.1s;
       }
 
       .burger__middle {
@@ -47,7 +45,6 @@
         backface-visibility: hidden;
         top: 8px;
         transform: rotate(-410deg);
-        transition: 0.25s 0.1s;
       }
     }
   }

@@ -71,6 +71,7 @@
 
 <style lang="scss" scoped>
   .header {
+    position: relative;
     padding-top: 60px;
 
     &_inner {
