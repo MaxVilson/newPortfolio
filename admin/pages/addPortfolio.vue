@@ -3,7 +3,7 @@
         <nuxt-link to="/" class="btn btn-primary mt-5">На главную</nuxt-link>
         <form class="mt-5">
         <div class="form-group">
-            <label for="exampleInputEmail1">Название поста</label>
+            <label for="exampleInputEmail1">Название работы</label>
             <input v-model="title" type="text" class="form-control">
         </div>
         <div class="form-group">

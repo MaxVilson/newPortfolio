@@ -18,7 +18,7 @@
 export default {
   async asyncData({ $axios }) {
     try {
-      const responsePortfolio = await $axios.$get()
+      const responsePortfolio = await $axios.$get('http://localhost:7777/api/portfolio/')
 
       return {
         portfolio: responsePortfolio.portfolio,
@@ -27,10 +27,6 @@ export default {
     catch(err) {
       console.error(err)
     }
-  },
-
-  methods: {
-    
   }
 }
 </script>
@@ -52,7 +48,7 @@ export default {
   @include make-col(12);
 
   @media (min-width: $screen-md) {
-    @include make-col(3);
+    @include make-col(4);
   }
 }
 

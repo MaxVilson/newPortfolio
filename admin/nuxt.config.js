@@ -60,5 +60,12 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  server: {
+    port: 3001, // default: 3000
+    host: 'localhost' // default: localhost
+  },
+  env: {
+    baseUrl: 'https://spyclick.pw/admin'
   }
 }
