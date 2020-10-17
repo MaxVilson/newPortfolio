@@ -9,38 +9,36 @@
           <span>{{ $t('header.title') }}</span>
         </Nuxt-link>
         <Burger class="header__burger" />
-        <transition name="fade">
-          <nav v-show="isMenuOpen || $device.isDesktopOrTablet" class="header__nav">
-            <ul class="header__list">
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/')" class="header__link">
-                  {{ $t('links.home') }}
-                </Nuxt-link>
-              </li>
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/blog')" class="header__link">
-                  {{ $t('links.blog') }}
-                </Nuxt-link>
-              </li>
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/about')" class="header__link">
-                  {{ $t('links.about') }}
-                </Nuxt-link>
-              </li>
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/portfolio')" class="header__link">
-                  {{ $t('links.portfolio') }}
-                </Nuxt-link>
-              </li>
-            </ul>
-            <div class="header__langs" v-if="$device.isMobile">
-              <NuxtLink :to="switchLocalePath('ru')" class="header__langs-link" active-class="header__langs-link_active"
-                exact>RU</NuxtLink>
-              <NuxtLink :to="switchLocalePath('en')" class="header__langs-link" active-class="header__langs-link_active"
-                exact>ENG</NuxtLink>
-            </div>
-          </nav>
-        </transition>
+        <nav v-show="isMenuOpen || $device.isDesktopOrTablet" class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/')" class="header__link">
+                {{ $t('links.home') }}
+              </Nuxt-link>
+            </li>
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/blog')" class="header__link">
+                {{ $t('links.blog') }}
+              </Nuxt-link>
+            </li>
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/about')" class="header__link">
+                {{ $t('links.about') }}
+              </Nuxt-link>
+            </li>
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/portfolio')" class="header__link">
+                {{ $t('links.portfolio') }}
+              </Nuxt-link>
+            </li>
+          </ul>
+          <div class="header__langs" v-if="$device.isMobile">
+            <NuxtLink :to="switchLocalePath('ru')" class="header__langs-link" active-class="header__langs-link_active"
+              exact>RU</NuxtLink>
+            <NuxtLink :to="switchLocalePath('en')" class="header__langs-link" active-class="header__langs-link_active"
+              exact>ENG</NuxtLink>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
@@ -167,7 +165,7 @@
 
   .header__langs {
     position: absolute;
-    right: 30px;
+    right: 45px;
     bottom: 50px;
     z-index: 5;
     font-size: 30px;

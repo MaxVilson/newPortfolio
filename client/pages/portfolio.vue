@@ -27,6 +27,11 @@ export default {
     catch(err) {
       console.error(err)
     }
+  },
+  head() {
+    return {
+      title: 'Maxim Vavilkin - Portfolio'
+    }
   }
 }
 </script>

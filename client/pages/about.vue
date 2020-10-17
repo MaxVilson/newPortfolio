@@ -19,6 +19,11 @@ export default {
     return {
       skills: ['Html', "Pug", "Css", "Scss", "Javascript", "Vue", "Jquery", "BEM", "Webpack", "GIT"]
     }
+  },
+  head() {
+    return {
+      title: 'Maxim Vavilkin - About me'
+    }
   }
 }
 </script>
