@@ -165,8 +165,8 @@
 
   .header__langs {
     position: absolute;
-    right: 45px;
-    bottom: 50px;
+    right: 43px;
+    bottom: 65px;
     z-index: 5;
     font-size: 30px;
     font-weight: 700;
@@ -193,15 +193,4 @@
       }
     }
   }
-
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity .3s;
-  }
-
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-  }
-
 </style>
