@@ -44,7 +44,7 @@
       .burger__bottom {
         backface-visibility: hidden;
         top: 8px;
-        transform: rotate(-410deg);
+        transform: rotate(-50deg);
       }
     }
   }
@@ -55,7 +55,7 @@
     left: 0;
     border-top: 4px solid $color-main;
     width: 100%;
-    transition: 0.25s;
+    // transition: 0.25s;
   }
 
   .burger__top {

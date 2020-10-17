@@ -167,7 +167,7 @@
 
   .header__langs {
     position: absolute;
-    right: 15px;
+    right: 30px;
     bottom: 50px;
     z-index: 5;
     font-size: 30px;
