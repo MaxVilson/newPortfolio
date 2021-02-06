@@ -5,7 +5,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Maxim Vavilkin',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device -width, initial-scale=1' },
@@ -86,6 +86,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   },
   /*
   ** Build configuration

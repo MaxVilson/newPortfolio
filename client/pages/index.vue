@@ -2,8 +2,8 @@
   <div class="container">
     <div class="wrapper">
       <h1 class="title" v-html="$t('home.title')"></h1>
-      <p class="text" v-html="$t('home.text', { age: calculateAge() })"></p>
-      <div class="langs" v-show="isMenuOpen || $device.isDesktopOrTablet">
+      <p class="text" v-html="$t('home.text')"></p>
+      <div class="langs" v-if="$device.isDesktopOrTablet">
         <NuxtLink :to="switchLocalePath('ru')" class="langs__link" active-class="langs__link_active"
           exact>RU</NuxtLink>
         <NuxtLink :to="switchLocalePath('en')" class="langs__link" active-class="langs__link_active"
@@ -11,28 +11,13 @@
       </div>
     </div>
     <div class="photo">
-      <img src="/photo.jpg" alt="Maxim Vavilkin">
+      <img src="/ava.gif" alt="Maxim Vavilkin">
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        birthDay: new Date(1993, 2, 6)
-      }
-    },
-
-    methods: {
-      calculateAge() {
-        const diff_ms = Date.now() - this.birthDay.getTime()
-        const age_dt = new Date(diff_ms)
-
-        return Math.abs(age_dt.getUTCFullYear() - 1970)
-      }
-    },
-
     computed: {
       isMenuOpen() {
         return this.$store.getters.getIsMenuOpen
@@ -65,23 +50,13 @@
 
   .text {
     font-size: 18px;
-    line-height: 22px;
+    line-height: 28px;
     color: $color-main-lighten;
   }
 
   .langs {
-    position: absolute;
-    right: 15px;
-    bottom: 50px;
-    z-index: 5;
     font-size: 30px;
     font-weight: 700;
-
-    @media (min-width: $screen-md) {
-      position: inherit;
-      right: inherit;
-      bottom: inherit;
-    }
 
     &__link {
       display: block;
@@ -112,7 +87,7 @@
 
     img {
       max-width: 100%;
-      background-size: cover;
+      object-fit: cover;
     }
   }
 

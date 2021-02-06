@@ -49,6 +49,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   },
   /*
   ** Build configuration
@@ -59,5 +60,12 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  server: {
+    port: 3001, // default: 3000
+    host: 'localhost' // default: localhost
+  },
+  env: {
+    baseUrl: 'https://spyclick.pw/admin'
   }
 }

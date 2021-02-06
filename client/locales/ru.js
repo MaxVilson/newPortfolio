@@ -10,7 +10,7 @@ export default {
     },
     "home": {
         "title": "Максим <br /> Вавилкин",
-        "text": "Фронтенд | Разработчик <br /> {age} лет, из Москвы"
+        "text": "Привет, Мир! Я фронтенд разработчик. <br /> Я ❤️ JavaScript, VueJS и NodeJS."
     },
     "about": {
         "title": "Обо мне",

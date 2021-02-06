@@ -4,6 +4,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      title: 'Maxim Vavilkin - Blog'
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .title {
   margin-top: 60px;

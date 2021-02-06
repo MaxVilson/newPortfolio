@@ -28,9 +28,10 @@ export default {
       console.error(err)
     }
   },
-
-  methods: {
-    
+  head() {
+    return {
+      title: 'Maxim Vavilkin - Portfolio'
+    }
   }
 }
 </script>
@@ -52,7 +53,7 @@ export default {
   @include make-col(12);
 
   @media (min-width: $screen-md) {
-    @include make-col(3);
+    @include make-col(4);
   }
 }
 

@@ -10,7 +10,7 @@ export default {
     },
     "home": {
         "title": "Maxim <br /> Vavilkin",
-        "text": "Frontend | Developer <br /> {age} years old, from Moscow"
+        "text": "Hello, World! I’m a frontend developer. <br /> I ❤️ JavaScript, VueJS and NodeJS."
     },
     "about": {
         "title": "About me",

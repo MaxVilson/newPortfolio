@@ -17,7 +17,12 @@
 export default {
   data() {
     return {
-      skills: ['Html', "Pug", "Css", "Scss", "Javascript", "Vue", "Jquery", "BEM", "Webpack", "GIT"]
+      skills: ['Html', "Pug", "Css", "Scss", "BEM", "Javascript", "Vue", "Jquery", "NodeJS", "Webpack", "GIT"]
+    }
+  },
+  head() {
+    return {
+      title: 'Maxim Vavilkin - About me'
     }
   }
 }

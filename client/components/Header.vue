@@ -2,38 +2,43 @@
   <header class="header" :class="{ header_inner: $route.path !== '/' && $route.path !== '/ru/' }">
     <div class="container">
       <div class="header__wrapper">
-        <div class="header__logo" 
-             v-if="$route.path !== '/' && $route.path !== '/ru/' && $device.isMobile">
+        <Nuxt-link class="header__logo" 
+                   :to="localePath('/')" 
+                   v-if="$route.path !== '/' && $route.path !== '/ru/' && $device.isMobile">
           <img src="/photo.jpg" alt="Maxim Vavilkin">
           <span>{{ $t('header.title') }}</span>
-        </div>
+        </Nuxt-link>
         <Burger class="header__burger" />
-        <transition name="fade">
-          <nav v-show="isMenuOpen || $device.isDesktopOrTablet" class="header__nav">
-            <ul class="header__list">
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/')" class="header__link">
-                  {{ $t('links.home') }}
-                </Nuxt-link>
-              </li>
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/blog')" class="header__link">
-                  {{ $t('links.blog') }}
-                </Nuxt-link>
-              </li>
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/about')" class="header__link">
-                  {{ $t('links.about') }}
-                </Nuxt-link>
-              </li>
-              <li class="header__item">
-                <Nuxt-link @click.native="hideMenu" :to="localePath('/portfolio')" class="header__link">
-                  {{ $t('links.portfolio') }}
-                </Nuxt-link>
-              </li>
-            </ul>
-          </nav>
-        </transition>
+        <nav v-show="isMenuOpen || $device.isDesktopOrTablet" class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/')" class="header__link">
+                {{ $t('links.home') }}
+              </Nuxt-link>
+            </li>
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/blog')" class="header__link">
+                {{ $t('links.blog') }}
+              </Nuxt-link>
+            </li>
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/about')" class="header__link">
+                {{ $t('links.about') }}
+              </Nuxt-link>
+            </li>
+            <li class="header__item">
+              <Nuxt-link @click.native="hideMenu" :to="localePath('/portfolio')" class="header__link">
+                {{ $t('links.portfolio') }}
+              </Nuxt-link>
+            </li>
+          </ul>
+          <div class="header__langs" v-if="$device.isMobile">
+            <NuxtLink :to="switchLocalePath('ru')" class="header__langs-link" active-class="header__langs-link_active"
+              exact>RU</NuxtLink>
+            <NuxtLink :to="switchLocalePath('en')" class="header__langs-link" active-class="header__langs-link_active"
+              exact>ENG</NuxtLink>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
@@ -50,9 +55,9 @@
     },
 
     computed: {
-        isMenuOpen() {
-            return this.$store.getters.getIsMenuOpen
-        }
+      isMenuOpen() {
+        return this.$store.getters.getIsMenuOpen
+      }
     },
 
     components: {
@@ -64,6 +69,7 @@
 
 <style lang="scss" scoped>
   .header {
+    position: relative;
     padding-top: 60px;
 
     &_inner {
@@ -83,6 +89,8 @@
   .header__logo {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: $color-main-lighten;
 
     img {
       width: 60px;
@@ -155,14 +163,34 @@
     }
   }
 
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity .3s;
-  }
+  .header__langs {
+    position: absolute;
+    right: 43px;
+    bottom: 80px;
+    z-index: 5;
+    font-size: 30px;
+    font-weight: 700;
 
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-  }
+    &-link {
+      display: block;
+      text-decoration: none;
+      writing-mode: vertical-lr;
+      color: $color-main-light;
 
+      &:first-child {
+        margin-bottom: 10px;
+
+        &:after {
+          content: '|';
+          position: relative;
+          bottom: -5px;
+          color: $color-main;
+        }
+      }
+
+      &_active {
+        color: $color-main;
+      }
+    }
+  }
 </style>
