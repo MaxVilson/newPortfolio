@@ -19,7 +19,7 @@ export default {
   async asyncData({ $axios }) {
     try {
       const responsePortfolio = await $axios.$get(
-        "http://192.168.43.156/:7777/api/portfolio/"
+        "http://192.168.43.156:7777/api/portfolio/"
       );
 
       return {
