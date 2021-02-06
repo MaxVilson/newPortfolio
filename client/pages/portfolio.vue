@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col" v-for="item in portfolio" :key="item._id">
           <div class="card">
-            <img class="card-img" :src="item.photo" :alt="item.title">
+            <img class="card-img" :src="item.photo" :alt="item.title" />
             <h5 class="card-title">{{ item.title }}</h5>
           </div>
         </div>
@@ -18,22 +18,23 @@
 export default {
   async asyncData({ $axios }) {
     try {
-      const responsePortfolio = await $axios.$get('http://localhost:7777/api/portfolio/')
+      const responsePortfolio = await $axios.$get(
+        "http://192.168.43.156/:7777/api/portfolio/"
+      );
 
       return {
         portfolio: responsePortfolio.portfolio,
-      }
-    } 
-    catch(err) {
-      console.error(err)
+      };
+    } catch (err) {
+      console.error(err);
     }
   },
   head() {
     return {
-      title: 'Maxim Vavilkin - Portfolio'
-    }
-  }
-}
+      title: "Maxim Vavilkin - Portfolio",
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -61,17 +62,17 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   margin-bottom: 20px;
   padding: 15px;
   height: 200px;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   background-color: #000;
 
   &:hover {
     .card-img {
       transform: scale(1.1);
-      transition: all .5s ease;
+      transition: all 0.5s ease;
     }
 
     .card-title {
@@ -91,7 +92,7 @@ export default {
   font-size: 18px;
   color: #fff;
   opacity: 0;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   background-color: #000;
 }
 
